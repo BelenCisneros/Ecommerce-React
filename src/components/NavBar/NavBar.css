@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.navBar{
+    background-color: rgb(255, 174, 0);
+    height: 90px;
+    width: 100%;
+}
+.logo{
+    display: flex;
+    display: inline-block;
+    width: 150px;
+    height: auto;
+    margin-top: 16px;
+    margin-right: 350px;
+}
+.menu{
+    display: flex;
+    display: inline-block;
+    width: 40vw;
+
+}
+li{display: flex;
+    display: inline-block;
+    list-style: none;
+    margin-left: 15px;
+    font-weight: 500;
+}
