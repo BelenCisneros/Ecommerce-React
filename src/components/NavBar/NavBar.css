@@ -21,7 +21,8 @@
     width: 40vw;
 
 }
-li{display: flex;
+li{
+    display: flex;
     display: inline-block;
     list-style: none;
     margin-left: 15px;
