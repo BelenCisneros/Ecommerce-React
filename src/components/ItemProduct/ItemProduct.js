@@ -1,9 +1,13 @@
 import './ItemProduct.css'
-const ItemProduct = ({title, children}) => {
+
+const ItemProduct = ({title, price, image}) => {
+
     return(
-        <div className="modal-custom">
-            <h2>{title}</h2>
-            {children}
+        <div className="item-product">
+            <img src={`/assets/${image}`} alt="Imagen producto" />
+            <p>{title}</p>
+            <span>${price}</span>
+            <button>Comprar</button>
         </div>
     )
 }

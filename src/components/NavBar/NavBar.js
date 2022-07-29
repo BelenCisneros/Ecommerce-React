@@ -1,5 +1,6 @@
 import CartWidget from '../CartWidget/CartWidget';
 import './NavBar.css'
+
 const NavBar=()=>{
     return(
         <div className="navBar">
