@@ -1,11 +1,4 @@
-.count-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .count-container__contador {
+.count-container__contador {
     display: grid;
     grid-template: 1fr / 1fr 1fr 1fr;
     width: 140px;
@@ -37,7 +30,6 @@
   }
   
   .count-container__qty {
-    text-align: center;
     height: 100%;
     padding-top: 10px;
     color: var(--primary-color);

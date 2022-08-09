@@ -1,6 +1,7 @@
 import './ItemProduct.css'
 import ItemCount from '../ItemCount/ItemCount'
-const ItemProduct = ({title, price, image}) => {
+
+const ItemProduct = ({name, price, thumbnail}) => {
 
     const onAdd = (qty) => {
         alert(`Agregaste ${qty} productos`);
@@ -8,8 +9,8 @@ const ItemProduct = ({title, price, image}) => {
    
     return(
         <div className="item-product">
-            <img src={`/assets/${image}`} alt="Imagen producto" />
-            <p>{title}</p>
+            <img src={`/assets/${thumbnail}`} alt="Imagen producto" />
+            <p>{name}</p>
             <span>${price}</span>
             <ItemCount onAdd={onAdd} initial={1} stock={7} />
         </div>

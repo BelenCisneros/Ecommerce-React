@@ -1,14 +1,15 @@
-import ItemProduct from "../ItemProduct/ItemProduct"
-import './ItemListContainer.css'
+import React from 'react';
+import ItemList from '../ItemList/ItemList';
+import './ItemListContainer.css';
 
-const ItemListContainer = ({section}) => {
+const ItemListContainer = () => {
+  return (
+    <section className="item-list-container">
+      <h2 className="item-list-container__title">Productos destacados</h2>
 
-    return(
-        <div className='list-products'>
-            <h2>{section}</h2>
-            <ItemProduct title="Campera Invierno" price= {1500} image={'juego3.jpg'}/>
-        </div>
-    )
-}
+      <ItemList />
+    </section>
+  );
+};
 
-export default ItemListContainer
+export default ItemListContainer;

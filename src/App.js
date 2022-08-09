@@ -1,17 +1,14 @@
-import './App.css';
+import React from 'react';
 import NavBar from './components/NavBar/NavBar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
-function App() {
-  const styleApp = { padding: '10px 20px', marginTop : 10}
-  return (
-    //JSX
-    <div className="container" style={styleApp} >
+import './App.css';
+
+export default function App() {
+  return (   
+    <>    
       <NavBar />
-      <div className='main-container'>
-        <ItemListContainer section="Productos en oferta"/>
-      </div>
-    </div>
+      <ItemListContainer />
+    </>
   );
 }
-export default App;
