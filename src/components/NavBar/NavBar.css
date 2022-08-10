@@ -3,15 +3,14 @@
     margin: 0;
 }
 .navBar{
-    background-color: rgb(255, 174, 0);
-    height: 90px;
+    background-color: rgb(21, 20, 20);
+    height: 180px;
     width: 100%;
 }
 .logo{
     display: flex;
     display: inline-block;
-    width: 150px;
-    height: auto;
+    height: 75%;
     margin-top: 16px;
     margin-right: 350px;
     margin-left: 250px;
@@ -20,7 +19,6 @@
     display: flex;
     display: inline-block;
     width: 40vw;
-
 }
 li{
     display: flex;
@@ -28,4 +26,6 @@ li{
     list-style: none;
     margin-left: 15px;
     font-weight: 500;
+    color: aliceblue;
+
 }

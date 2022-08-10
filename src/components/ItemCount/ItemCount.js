@@ -1,21 +1,21 @@
 import React from 'react';
 import { useState } from 'react';
-
 import './ItemCount.css';
 
-const ItemCount = ({ onAdd, initial, stock }) => {
-    const [qty, setQty] = useState(initial);
-    const addProduct = (num) => {
-        setQty(qty + num);
-      };
-    
-      return (
-        <div className="count-container">
-          <div className="count-container__contador">
-            <button
-              className="count-container__button"
-              onClick={() => addProduct(-1)}
-              disabled={qty === initial}
+const ItemCount = ({ initial, stock, onAdd }) => {
+  const [qty, setQty] = useState(initial);
+
+  const addProduct = (num) => {
+    setQty(qty + num);
+  };
+
+  return (
+    <div className="count-container">
+      <div className="count-container__contador">
+        <button
+          className="count-container__button"
+          onClick={() => addProduct(-1)}
+          disabled={qty === initial ? true : null}
         >
           -
         </button>
@@ -23,7 +23,7 @@ const ItemCount = ({ onAdd, initial, stock }) => {
         <button
           className="count-container__button"
           onClick={() => addProduct(+1)}
-          disabled={qty === stock}
+          disabled={qty === stock ? true : null}
         >
           +
         </button>
@@ -31,9 +31,7 @@ const ItemCount = ({ onAdd, initial, stock }) => {
 
       <button
         className="button-primary"
-        onClick={() => {
-          onAdd(qty);
-        }}
+        onClick={() => onAdd(qty)}
         disabled={stock === 0 ? true : null}
       >
         Añadir

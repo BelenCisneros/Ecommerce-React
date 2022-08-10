@@ -1,60 +1,36 @@
 import React, { useEffect, useState } from 'react';
 import Item from '../Item/Item.js';
-import {productList} from '../../data/data.js'
-
+import { getAllProductsFromDB } from '../../helpers/getData.js';
 import './ItemList.css';
 
 const ItemList = () => {
   const [products, setProducts] = useState([]);
 
-  const getProducts = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (true) {
-        resolve(productList);
-      } else {
-        ;
-      }
-    }, 2000);
-  });
-
-  const getProductsFromDB = async () => {
-    try {
-      const result = await getProducts;
-      setProducts(result);
-    } catch (error) {
-      console.error(error);
-      alert('No podemos mostrar los productos en este momento');
-    }
-  };
-
   useEffect(() => {
-    getProductsFromDB();
+    getAllProductsFromDB(setProducts);
   }, []);
 
   return (
     <div className="product-list-container">
-      {
-        products.length ? (
-          <>
-            {
-              products.map((product) => {
-                return (
-                  <Item
-                    key={product.id}
-                    name={product.name}
-                    thumbnail={product.thumbnail}
-                    price={product.price}
-                    stock={product.stock}
-                    id={product.id}
-                  />
-                );
-              })
-            }
-          </>
-        ) : (
-          <p>Cargando productos...</p>
-        ) 
-      }
+      {products.length ? (
+        <>
+          {products.map((product) => {
+            return (
+              <div key={product.id}>
+                <Item
+                  name={product.name}
+                  thumbnail={product.thumbnail}
+                  price={product.price}
+                  stock={product.stock}
+                  id={product.id}
+                />
+              </div>
+            );
+          })}
+        </>
+      ) : (
+        <p>Cargando productos...</p>
+      )}
     </div>
   );
 };

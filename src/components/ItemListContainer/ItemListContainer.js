@@ -1,13 +1,30 @@
-import React from 'react';
-import ItemList from '../ItemList/ItemList';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import {
+  getAllProductsFromDB,
+  getProductsByCategory,
+} from '../helpers/getData.js';
+import ItemList from './ItemList';
 import './ItemListContainer.css';
 
 const ItemListContainer = () => {
+  let { category } = useParams();
+  console.log(category);
+
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    if (category) {
+      getProductsByCategory(setProducts, category);
+    } else {
+      getAllProductsFromDB(setProducts);
+    }
+  }, []);
   return (
     <section className="item-list-container">
       <h2 className="item-list-container__title">Productos destacados</h2>
 
-      <ItemList />
+      <ItemList products={products} />
     </section>
   );
 };
